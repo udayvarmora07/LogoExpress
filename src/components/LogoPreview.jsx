@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import html2canvas from "html2canvas";
 
 const BASE_URL = "https://logoexpress.tubeguruji.com";
+const PROXY_URL = "https://logo-express.vercel.app/api/proxy?url="; // Update this line
 
 function LogoPreview({ downloadIcon }) {
   const [storageValue, setStorageValue] = useState();
@@ -16,15 +17,16 @@ function LogoPreview({ downloadIcon }) {
 
   useEffect(() => {
     if (downloadIcon) {
-      downloadPNGLogo();
+      downloadImage();
     }
   }, [downloadIcon]);
 
-  const downloadPNGLogo = () => {
+  const downloadImage = () => {
     const downloadLogoDiv = document.getElementById("downloadLogoDiv");
 
     html2canvas(downloadLogoDiv, {
       backgroundColor: null,
+      proxy: PROXY_URL,
     })
       .then((canvas) => {
         const pngImg = canvas.toDataURL("image/png");
@@ -72,7 +74,8 @@ function LogoPreview({ downloadIcon }) {
         >
           {storageValue?.icon?.includes(".png") ? (
             <img
-              src={`${BASE_URL}/png/${storageValue?.icon}`}
+              src={`${PROXY_URL}${BASE_URL}/png/${storageValue?.icon}`}
+              alt="Icon"
               style={{
                 height: storageValue?.iconSize,
                 width: storageValue?.iconSize,
@@ -88,6 +91,14 @@ function LogoPreview({ downloadIcon }) {
             />
           )}
         </div>
+      </div>
+      <div className="flex gap-4 mt-4">
+        <button
+          onClick={downloadImage}
+          className="p-2 bg-blue-500 text-white rounded"
+        >
+          Download PNG
+        </button>
       </div>
     </div>
   );
