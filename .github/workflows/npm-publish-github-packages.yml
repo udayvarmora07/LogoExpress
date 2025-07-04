@@ -32,6 +32,10 @@ jobs:
       #     AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
       #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
       #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
 
   deploy:
@@ -43,10 +47,6 @@ jobs:
     steps:
       - name: setup pages
         uses: actions/configure-pages@v5
-      - name: upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "."
       - name: Deploy to github pages
         id: deployment
         uses: actions/deploy-pages@v4
