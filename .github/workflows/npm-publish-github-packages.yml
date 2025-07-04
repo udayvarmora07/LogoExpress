@@ -18,8 +18,8 @@ jobs:
       - run: npm install
       - run: npm run build
       - uses: jakejarvis/s3-sync-action@master
-      - env:
-          SOURCE_DIR: build/
+        env:
+          SOURCE_DIR: dist/
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
