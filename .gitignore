@@ -1,4 +1,4 @@
-.github/workflows/*
+.github/workflows/npm-publish-github-packages.yml
 
 # Logs
 logs
