@@ -13,7 +13,7 @@ pipeline {
         }
         stage("nginx"){
             steps{
-                sh "sudo chmod -R /var/www/html/"
+                sh "sudo chmod 777 -R /var/www/html/"
                 sh "cp dist/* /var/www/html/"
             }
         }
