@@ -14,7 +14,7 @@ pipeline {
         stage("nginx"){
             steps{
                 sh '''
-                    echo "uday007" | sudo -S mkdir -p /var/www/logo-express/
+                    sudo mkdir -p /var/www/logo-express/
                     sudo cp -r dist/* /var/www/logo-express
                 '''
             }
