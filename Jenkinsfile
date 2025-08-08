@@ -13,7 +13,10 @@ pipeline {
         }
         stage("nginx"){
             steps{
-                sh "cp dist/* /var/www/html/"
+                sh '''
+                    sudo mkdir -p /var/www/logo-express/
+                    sudo cp -r dist/* /var/www/logo-express
+                '''
             }
         }
     }
