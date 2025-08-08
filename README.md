@@ -1,4 +1,4 @@
-# Logo Expess
+# Logo Expess (Vite React Node MySQL)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
