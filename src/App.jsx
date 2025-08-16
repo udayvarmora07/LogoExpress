@@ -30,7 +30,7 @@ function App() {
           <div className="md:col-span-3 border shadow-sm">
             <LogoPreview downloadIcon={downloadIcon} />
           </div>
-          <div className="">Ads Banner</div>
+          <div className="">This is Ads Banner Section(Under Maintenance).</div>
         </div>
       </div>
     </UpdateStorageContext.Provider>
