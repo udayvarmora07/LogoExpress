@@ -1,4 +1,5 @@
 .github/workflows/npm-publish-github-packages.yml
+nginx
 
 # Logs
 logs
