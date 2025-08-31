@@ -20,7 +20,7 @@ COPY nginx/nginx.conf /etc/nginx/http.d/default.conf
 
 WORKDIR /var/www/logo-express
 
-COPY --from=builder myapp/dist/ .
+COPY --from=builder /myapp/dist/ .
 
 EXPOSE 80
 
