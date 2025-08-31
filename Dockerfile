@@ -16,7 +16,7 @@ FROM alpine:latest
 
 RUN apk update && apk add nginx
 
-COPY --from=builder myapp/nginx/nginx.conf etc/nginx/http.d/default.conf
+COPY nginx/nginx.conf etc/nginx/http.d/default.conf
 
 WORKDIR /var/www/logo-express
 
