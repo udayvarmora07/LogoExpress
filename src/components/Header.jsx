@@ -7,7 +7,7 @@ function Header({ DownloadIcon }) {
     <div className="p-4 shadow-sm border flex justify-between items-center">
       <div className="flex items-center">
         <Zap size={32} color="#F15757" />
-        <div className="font-bold text-2xl ml-2">LogoExpress</div>
+        <div className="font-bold text-2xl ml-2">LogoExpressArgoCD</div>
       </div>
       <Button
         className="flex gap-2 items-center"
